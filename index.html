@@ -1,1 +1,165 @@
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ravintola Reservation</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-black text-white">
+    <div id="root">
+        <div class="min-h-screen bg-black">
+            <nav class="bg-black p-4">
+                <div class="container mx-auto flex justify-between items-center">
+                    <a href="/" class="text-[#FF4500] text-2xl font-bold">Ravintola</a>
+                    <div class="space-x-4">
+                        <a href="/" class="text-white hover:text-[#FF4500]">Koti</a>
+                        <a href="/menu" class="text-white hover:text-[#FF4500]">Menu</a>
+                        <a href="/poytavaraukset" class="text-white hover:text-[#FF4500]">Varaukset</a>
+                        <a href="/about" class="text-white hover:text-[#FF4500]">Tietoa</a>
+                        <a href="/contact" class="text-white hover:text-[#FF4500]">Yhteystiedot</a>
+                    </div>
+                </div>
+            </nav>
 
+            <main class="container mx-auto px-4 py-8">
+                <div class="max-w-6xl mx-auto text-white">
+                    <div class="grid md:grid-cols-2 gap-8 mb-12">
+                        <div>
+                            <img src="/restaurant-interior.jpg" alt="Elegant dining room with ambient lighting and sophisticated table settings" class="rounded-lg w-full h-[300px] object-cover">
+                        </div>
+                        <div>
+                            <img src="/private-dining.jpg" alt="Exclusive private dining area with crystal chandeliers and wine display" class="rounded-lg w-full h-[300px] object-cover">
+                        </div>
+                    </div>
+                    
+                    <h1 class="text-4xl font-bold text-[#FF4500] mb-8 text-center font-serif">Pöytävaraukset</h1>
+
+                    <div class="bg-[#1a1a1a] p-8 rounded-lg mb-8 shadow-lg">
+                        <div>
+                            <h2 class="text-xl font-semibold mb-4 text-[#FF4500]">Valitse päivämäärä ja aika</h2>
+                            <form class="space-y-6">
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block mb-2 text-[#FF4500]">Päivämäärä</label>
+                                        <input type="date" name="date" class="w-full p-3 bg-black border border-[#FF4500] rounded text-white" required>
+                                    </div>
+                                    <div>
+                                        <label class="block mb-2 text-[#FF4500]">Aika</label>
+                                        <select name="time" class="w-full p-3 bg-black border border-[#FF4500] rounded text-white" required>
+                                            <option value="">Valitse aika</option>
+                                            <option value="17:00">17:00</option>
+                                            <option value="17:30">17:30</option>
+                                            <option value="18:00">18:00</option>
+                                            <option value="18:30">18:30</option>
+                                            <option value="19:00">19:00</option>
+                                            <option value="19:30">19:30</option>
+                                            <option value="20:00">20:00</option>
+                                            <option value="20:30">20:30</option>
+                                            <option value="21:00">21:00</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block mb-2 text-[#FF4500]">Nimi</label>
+                                        <input type="text" name="name" class="w-full p-3 bg-black border border-[#FF4500] rounded text-white" required>
+                                    </div>
+                                    <div>
+                                        <label class="block mb-2 text-[#FF4500]">Sähköposti</label>
+                                        <input type="email" name="email" class="w-full p-3 bg-black border border-[#FF4500] rounded text-white" required>
+                                    </div>
+                                </div>
+
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block mb-2 text-[#FF4500]">Puhelinnumero</label>
+                                        <input type="tel" name="phone" class="w-full p-3 bg-black border border-[#FF4500] rounded text-white" required>
+                                    </div>
+                                    <div>
+                                        <label class="block mb-2 text-[#FF4500]">Henkilömäärä</label>
+                                        <select name="guests" class="w-full p-3 bg-black border border-[#FF4500] rounded text-white" required>
+                                            <option value="1">1 henkilö</option>
+                                            <option value="2">2 henkilöä</option>
+                                            <option value="3">3 henkilöä</option>
+                                            <option value="4">4 henkilöä</option>
+                                            <option value="5">5 henkilöä</option>
+                                            <option value="6">6 henkilöä</option>
+                                            <option value="7">7 henkilöä</option>
+                                            <option value="8">8 henkilöä</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block mb-2 text-[#FF4500]">Erikoistoiveet</label>
+                                    <textarea name="specialRequests" class="w-full p-3 bg-black border border-[#FF4500] rounded text-white h-32" placeholder="Allergiat, erikoisruokavaliot tai muut toiveet"></textarea>
+                                </div>
+
+                                <button type="submit" class="w-full bg-[#FF4500] text-white py-3 px-6 rounded hover:bg-[#FF5722] text-lg font-semibold transition-colors duration-200">
+                                    Lähetä Varaus
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="space-y-8">
+                        <div class="bg-[#1a1a1a] p-6 rounded-lg shadow-lg">
+                            <h2 class="text-2xl font-semibold mb-4 text-[#FF4500]">Varausperiaatteet</h2>
+                            <ul class="space-y-3">
+                                <li><i class="far fa-clock mr-2 text-[#FF4500]"></i>Pöytävarauksen kesto on 2 tuntia</li>
+                                <li><i class="far fa-credit-card mr-2 text-[#FF4500]"></i>Yli 6 hengen varauksiin vaaditaan luottokorttitiedot</li>
+                                <li><i class="far fa-calendar-times mr-2 text-[#FF4500]"></i>Peruutus 24h ennen varattua aikaa</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-[#1a1a1a] p-6 rounded-lg shadow-lg">
+                            <h2 class="text-2xl font-semibold mb-4 text-[#FF4500]">Yksityistilaisuudet</h2>
+                            <div class="space-y-4">
+                                <p><i class="fas fa-users mr-2 text-[#FF4500]"></i>Tilat jopa 40 hengelle</p>
+                                <p><i class="fas fa-utensils mr-2 text-[#FF4500]"></i>Räätälöidyt menut toiveiden mukaan</p>
+                                <p><i class="fas fa-wine-glass-alt mr-2 text-[#FF4500]"></i>Viininmaistelu kokemukset</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <footer class="bg-black text-white py-8 mt-12">
+                <div class="container mx-auto px-4">
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div>
+                            <h3 class="text-[#FF4500] text-xl mb-4">Yhteystiedot</h3>
+                            <p>Osoite: Ravintolakatu 123</p>
+                            <p>00100 Helsinki</p>
+                            <p>Puh: 040 1234567</p>
+                            <p>Email: info@ravintola.fi</p>
+                        </div>
+                        <div>
+                            <h3 class="text-[#FF4500] text-xl mb-4">Aukioloajat</h3>
+                            <p>Ma-Pe: 11:00 - 23:00</p>
+                            <p>La: 12:00 - 24:00</p>
+                            <p>Su: 12:00 - 22:00</p>
+                        </div>
+                        <div>
+                            <h3 class="text-[#FF4500] text-xl mb-4">Seuraa meitä</h3>
+                            <div class="flex space-x-4">
+                                <a href="#" class="text-white hover:text-[#FF4500]"><i class="fab fa-facebook"></i></a>
+                                <a href="#" class="text-white hover:text-[#FF4500]"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="text-white hover:text-[#FF4500]"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel" src="app.js"></script>
+</body>
+</html>
